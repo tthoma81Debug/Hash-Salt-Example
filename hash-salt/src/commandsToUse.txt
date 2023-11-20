@@ -1,0 +1,10 @@
+1. npm install for everything you need and each thing it complains about missing
+2. node server.js to start the server
+Open a browser and go the the following url to make a file:
+http://localhost:3000/?username=test&password=password&write=true
+Check out saltsAndHashes.csv
+Now go back to the browser and change the value of write to false. It will read the salt and the hash. It will then apply the salt to the password the user types in, hash the result, and see if it matches the saved hash
+http://localhost:3000/?username=test&password=password&write=false
+Now lets see if we can catch an incorrect password. Please change the value of the password to "passwords" and see what happens:
+http://localhost:3000/?username=test&password=passwords&write=false
+It should show that they don't matches. Note that this only reads one line since it is just an example.
